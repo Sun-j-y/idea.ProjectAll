@@ -8,6 +8,6 @@ import org.junit.Test;
 public class testMain {
     @Test
     public void t1(){
-
+        System.out.println("helloworld");
     }
 }
