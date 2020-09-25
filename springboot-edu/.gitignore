@@ -1,18 +1,21 @@
+HELP.md
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
 *.iml
 *.ipr
 
-
-
-
-
-
-
-
-HELP.md
+# class
 target/
+
+
+
+
+
+
+
+
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
