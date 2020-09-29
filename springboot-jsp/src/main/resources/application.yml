@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: dev
+
+  mvc:
+    view:
+      prefix: / # 前缀
+      suffix: .jsp  # 后缀
+
+server:
+  servlet:
+    jsp:
+      init-parameters:
+        development: true # 开启jsp页面的热部署

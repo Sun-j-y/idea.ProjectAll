@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello Thymeleaf</h1>
+<h1>展示单个数据</h1>
+    欢迎: <span th:text="${name}"/>
+    链接: <span th:utext="${aaa}"/>
+    <input th:value="${age}">
+
+<h1>展示对象数据</h1>
+<ul>
+    <li>id: <span th:text="${user.uid}"/> </li>
+    <li>name: <span th:text="${user.uname}"/> </li>
+    <li>password: <span th:text="${user.password}"/> </li>
+    <li>set: <span th:text="${user.set}"/> </li>
+    <li>set: <span th:text="${#dates.format(user.set,'yyyy-dd-mm HH:MM:ss')}"/> </li>
+</ul>
+
+<h1>有条件展示数据</h1>
+SDAF HDSKJLA F
+<h1>展示多个数据</h1>
+</body>
+</html>

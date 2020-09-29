@@ -1,7 +1,12 @@
 package com.sforits.springbootedu.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.context.annotation.Configuration;
+import lombok.NoArgsConstructor;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 /**
  * @Author：sforits
@@ -9,9 +14,13 @@ import org.springframework.context.annotation.Configuration;
  * @Date：2020/9/24-19:52 Created by IntelliJ IDEA.
  */
 @Data
-@Configuration
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
+@ConfigurationProperties(prefix = "user")
 public class User {
     private Integer uid;
-    private String username;
+    private String uname;
     private String password;
+    private Date set;
 }

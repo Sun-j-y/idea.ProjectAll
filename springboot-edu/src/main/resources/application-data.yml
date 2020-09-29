@@ -1,0 +1,19 @@
+# 变量注入
+# # 变量
+name: xiaozheng
+# # 时间
+bir: 2020/12/12 12:12:12
+# # 数组
+strs: aa,bb,cc
+# # List集合
+qqs: xiaochen,xiaonei,xiaoming
+# # Map
+map:
+  'aa': 'aaaa'
+  'bb': 'bbbb'
+  'cc': 'cccc'
+
+# # 对象
+user:
+  uname: 管理员
+  password: root

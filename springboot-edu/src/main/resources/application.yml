@@ -1,0 +1,44 @@
+# yml文件对语法要求较高, 甚至多一个空格少一个空格都会导致配置不生效
+# 因此, 企业中对这种配置文件方式使用较少
+
+# 多配置文件切换
+# # 使开发配置环境生效
+spring:
+  profiles:
+    active: dev,data
+    # springBoot懒加载
+    # 不在项目启动时初始化, 而是在用到的时候进行初始化
+  #  main:
+  #    lazy-initialization: true
+  thymeleaf: # 这个字段的都是默认值
+    prefix: classpath:/templates/ # 使用模板目录
+    suffix: .html # 使用模板后缀
+    encoding: UTF-8 # 使用模板编码
+    servlet:
+      content-type: text/html # 使用模板响应类型
+    mode: LEGACYHTML5
+    cache: false  # 热部署支持
+  resources:
+    # 静态资源路径, 是一个数组, 可以配置多个目录
+    static-locations: classpath:/static/
+  servlet:
+    multipart:
+      max-file-size: 10MB # 单个文件最大上传大小
+      max-request-size: 100MB  # 单次请求最大上传大小
+
+server:
+  servlet:
+    context-path: / # 指定当前应用部署到内嵌容器中的项目名
+
+logging:
+  level:
+    root: info  # 全局日志输出级别
+    com.sforits.springbootedu.dao: debug
+    com.sforits.springbootedu.controller: debug
+  pattern:
+    # 日志输出的渲染格式
+    console: "%d{yyyy-MM-dd HH:mm:ss} %highlight([%5p]) %5L [%t] %green(%c) %m%n"
+
+
+
+

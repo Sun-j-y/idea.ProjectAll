@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!-- 定义项目中日志输出位置 -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 定义项目的日志输出格式 -->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%p] %m %n</pattern>
+            <!--
+                参数:
+                    %c  类名信息
+                    %p  日志级别
+                    %d  日期, 后跟日期格式
+            -->
+        </layout>
+    </appender>
+    <!-- 项目中日志级别 -->
+    <root level="INFO">
+        <appender-ref ref="stdout"/>
+    </root>
+
+    <!-- 项目中指定包日志级别 -->
+    <logger name="com.sforits.springbootedu.dao" level="DEBUG"/>
+</configuration>

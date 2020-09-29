@@ -2,6 +2,8 @@ package com.sforits.springbootedu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @SpringBootApplication 注解相当与@EnableAutoConfiguration , @ComponentScan 和 @Configuration 三个注解
@@ -13,6 +15,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Configuration 作用:
  */
 @SpringBootApplication
+//@EnableAspectJAutoProxy
+//@ImportResource("spring.xml") // 使用xml方式, 导入Bean配置文件
 public class SpringbootEduApplication {
 
     public static void main(String[] args) {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传测试</title>
+</head>
+<body>
+<div>
+    <!--
+        form表单上传文件 提交方式必须是post()
+    -->
+    <form action="/file/uploadplus" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileup">
+        <input type="submit" value="文件上传">
+    </form>
+
+    <h3>文件下载</h3>
+    <a href="/file/download?fileName=material.sql">material.sql</a>
+    <a href="/file/downloadplus?fileName=MySQL基础.pdf">MySQL基础.pdf</a>
+</div>
+</body>
+</html>
