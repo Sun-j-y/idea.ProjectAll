@@ -5,7 +5,9 @@ import com.sforits.springbootedu.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Calendar;
@@ -18,34 +20,28 @@ import java.util.Map;
  * @E-mail：sforits@gmail.com
  * @Date：2020/9/23-19:51 Created by IntelliJ IDEA.
  */
-@RestController     // 用来
+@RestController
 @RequestMapping("hello")
 public class FirstController {
     @Autowired
     private User user;
-
     @Autowired
     private UserServiceImpl userService;
-
     @Autowired
     private Calendar calendar;
     @Autowired
     private Calendar calendar1;
-
-    //变量注入
+    // 变量注入
     @Value("${name}")
     private String name;
-
     @Value("${bir}")
     private Date bir;
-
     @Value("${strs}")
     private String[] strs;
-
     @Value("${qqs}")
     private List<String> qqs;
 
-//    @Value("#{${map}}")
+    //    @Value("#{${map}}")
     private Map<String, String> maps;
 
     @RequestMapping("hello")
@@ -67,7 +63,16 @@ public class FirstController {
         }
         // lambda表达式
         qqs.forEach(qq -> System.out.println("qq = " + qq));
-//        maps.forEach((k, v) -> System.out.println("Key = " + k + "  value = " + v));
+        // maps.forEach((k, v) -> System.out.println("Key = " + k + "  value = " + v));
         return "Hello SpringBoot";
+    }
+
+    /**
+     * 测试拦截器
+     */
+    @RequestMapping("inter")
+    public String interceptorTest() {
+        System.out.println("拦截器放行了");
+        return "Hello Interceptor";
     }
 }

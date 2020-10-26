@@ -4,6 +4,8 @@
 # 多配置文件切换
 # # 使开发配置环境生效
 spring:
+  application:
+    name: start
   profiles:
     active: dev,data
     # springBoot懒加载
@@ -26,6 +28,9 @@ spring:
       max-file-size: 10MB # 单个文件最大上传大小
       max-request-size: 100MB  # 单次请求最大上传大小
 
+
+
+
 server:
   servlet:
     context-path: / # 指定当前应用部署到内嵌容器中的项目名
@@ -37,7 +42,7 @@ logging:
     com.sforits.springbootedu.controller: debug
   pattern:
     # 日志输出的渲染格式
-    console: "%d{yyyy-MM-dd HH:mm:ss} %highlight([%5p]) %5L [%t] %green(%c) %m%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss:SSS} %highlight(%.5p) %5L [%t] %green(%c) %m%n"
 
 
 
